@@ -11,6 +11,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 
 # Read in data from CSV
+# Data set from https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
 dfData = pd.read_csv('bank-additional-full.csv', sep=';')
 
 # Encode the classification labels to numbers
@@ -92,18 +93,14 @@ def getHof():
 
 def getMetrics(hof):
 
-	# Get list of indicies for each percentile in the hall of fame
-	granularity = 0.01
-	percentileList = list(numpy.arange(0, 1 + granularity, granularity))
+	# Get list of percentiles in the hall of fame
 	percentileList = [i / (len(hof) - 1) for i in range(len(hof))]
-	indexList = [int(round(percentile * (len(hof) - 1))) for percentile in percentileList]
 	
 	# Gather fitness data from each percentile
 	testAccuracyList = []
 	validationAccuracyList = []
 	individualList = []
 	for individual in hof:
-		#individual = hof[index]
 		testAccuracy = individual.fitness.values
 		validationAccuracy = getFitness(individual, X_trainAndTest, X_validation, y_trainAndTest, y_validation)
 		testAccuracyList.append(testAccuracy[0])
