@@ -10,4 +10,4 @@ While working with a data set that I had created, I found myself wondering wheth
 In the future, I may make a class to specifically facilitate the feature selection process.  This will allow the Genetic Algorithm method of feature selection to be more easily applied "out of the box" to machine learning problems.
 
 ## Other Notes
-To plot a curve over the noisy data, I used Cubic-Spline Interpolation.  This is my first time using this method, and I suspect there are better ways to plot such a curve.  In my limited experience, Cubic-Spline Interpolation can determine curves that have unnecessary "bends" in them from time to time.
+To plot a curve over the noisy data, I used Cubic-Spline Interpolation.  This is my first time using this method, and I suspect there are better ways to plot such a curve.  In my limited experience, Cubic-Spline Interpolation can determine curves that have unnecessary "bends" in them.
